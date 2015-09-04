@@ -1,18 +1,14 @@
 """
 The MIT License (MIT)
-
 Copyright (c) 2015 Abstract Operator
-
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
-
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
-
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -24,10 +20,12 @@ SOFTWARE.
 __author__=['racaljk(Abatract Operator);1948638989@qq.com']
 
 import random
-import numpy as np
 
-class singlePerceptron(object):
+class perceptron(object):
     def __init__(self,debugMode=False):
+        """
+        :param debugMode: if printing debug info
+        """
         self.debug = debugMode
         self.iteration = 0
 
@@ -67,17 +65,17 @@ class singlePerceptron(object):
                     print 'iterations:%s'% self.iteration
                     print 'weight1:%s\nweight2:%s'% (self.weights[0],self.weights[1])
                     if round(self.weights[0],2) >= 0:
-                        print 'linear model y='+str(round(self.weights[1],2))+'x+'+str(round(self.weights[0],2))
+                        print 'linear model: y='+str(round(self.weights[1],2))+'x+'+str(round(self.weights[0],2))
                     else:
-                        print 'linear model y='+str(round(self.weights[1],2))+'x'+str(round(self.weights[0],2))
+                        print 'linear model: y='+str(round(self.weights[1],2))+'x'+str(round(self.weights[0],2))
                 learned = True
 
     def expectedOutput(self,data):
         """Print expected output.
         :param data:like x=[feature_x,feature_y];but when it was called
-        by perceptron.train function,its structure is [feature_x,feature_y,label]
+        by perceptron.train function,its structure is x=[feature_x,feature_y,label]
         :return:label
-        :rtype: string
+        :rtype: int
         """
         sum = 0
         for x in xrange(2):
