@@ -6,7 +6,7 @@ print 'test 1: predict data label'
 p = perceptron(1)
 p.init()
 p.train([[-0.4, 0.9, 1], [-0.5, 0, 1], [0.6, 0.1, -1]])
-print 'predict label of the data is:%d'% p.expectedOutput([-0.2, 0.4])
+print 'predict label of the data is:%d'% p.expected([-0.2, 0.4])
 
 #classify data by a line
 print '\ntest 2: classify data by a line'
@@ -18,7 +18,7 @@ p1 = perceptron(1)
 p1.init()
 p1.train(trainData)
 for x in trainData:
-    r = p1.expectedOutput(x)
+    r = p1.expected(x)
     if r != x[2]:
         print 'error dot:('
     if r == 1:

@@ -53,7 +53,7 @@ class perceptron(object):
         while not learned:
             convergence = 0.0
             for x in trainData:
-                ret = self.expectedOutput(x)
+                ret = self.expected(x)
                 if x[2] != ret:
                     err = x[2] - ret
                     self._updateWeight(err,x)
@@ -70,7 +70,7 @@ class perceptron(object):
                         print 'linear model: y='+str(round(self.weights[1],2))+'x'+str(round(self.weights[0],2))
                 learned = True
 
-    def expectedOutput(self,data):
+    def expected(self,data):
         """Print expected output.
         :param data:like x=[feature_x,feature_y];but when it was called
         by perceptron.train function,its structure is x=[feature_x,feature_y,label]
