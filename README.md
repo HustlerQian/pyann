@@ -2,11 +2,15 @@
 ![license](https://img.shields.io/github/license/mashape/apistatus.svg)![pythontype](https://img.shields.io/badge/python-2.7-blue.svg)![status](https://img.shields.io/badge/status-updating-orange.svg)<br>
 pyann is a simple but stronger artificial neural network library for python. I refer to KISS(Keep it simple,stupid) Philosophy as the core principle of it, so you can read or modify source code easily. For user,it's easy to build many different neural networks by a little code:
 ```python
-#create a bpnn and train it through train data
-trainData = [...] 
-net = pyann.bpnn()
+#create a perceptron model and train it through train data
+import pyann.pyann as pn
+
+trainData = [[..,..,label],[..,..,label]]
+
+net = pn.perceptron()
 net.init()
 net.train(trainData)
+net.expected([..,..]) #will print predicted class
 ```
 Now this project is still updating, also I hope you can help me complete this library and make it perfect!<br>
 For Chinese,see [READMECN.md](https://github.com/racaljk/pyann/blob/master/READMECN.md).
