@@ -3,11 +3,11 @@
 pyann is a simple but stronger artificial neural network library for python. I refer to KISS(Keep it simple,stupid) Philosophy as the core principle of it, so you can read or modify source code easily. For user,it's easy to build many different neural networks by a little code:
 ```python
 #create a perceptron model and train it through train data
-import pyann.pyann as pn
+import network.perceptron as ptron
 
 trainData = [[..,..,label],[..,..,label]]
 
-net = pn.perceptron()
+net = ptron.perceptron()
 net.init()
 net.train(trainData)
 net.expected([..,..]) #will print predicted class
